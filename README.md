@@ -7,6 +7,27 @@
 
 ##### FChat使用手册：
 
+###### 目录
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [FChat使用手册：](#fchat%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C)
+  - [目录](#%E7%9B%AE%E5%BD%95)
+  - [简介](#%E7%AE%80%E4%BB%8B)
+  - [安装](#%E5%AE%89%E8%A3%85)
+  - [使用方法](#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
+  - [数据结构](#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84)
+  - [可配置参数](#%E5%8F%AF%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0)
+  - [插槽](#%E6%8F%92%E6%A7%BD)
+  - [音频开启方法](#%E9%9F%B3%E9%A2%91%E5%BC%80%E5%90%AF%E6%96%B9%E6%B3%95)
+  - [FChart类](#FChart类)
+  - [Demo](#demo)
+  - [注意](#%E6%B3%A8%E6%84%8F)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ------
 
 ###### 简介
@@ -175,24 +196,24 @@ methods: {
 
 <font color=#2d8cf0>属性参数</font>
 
-| 参数名         | 功能                                                         | 示例                            | 说明                                  | 类型   |
-| -------------- | ------------------------------------------------------------ | ------------------------------- | ------------------------------------- | ------ |
-| username       | header头部的联系人                                           | :username="'admin'"             |                                       | String |
-| contentHeight  | 聊天区域高度                                                 | :contentHeight="200"            |                                       | Number |
-| contentBg      | 聊天区域的背景颜色                                           | :contentBg="'#123456'"          |                                       | String |
-| preventId      | 控制音频长按时禁止选中的范围(防止长按选中导致失去焦点，详情见注意) | :preventId="'allContent'"       | 插件通过document.getElementById()获取 | String |
-| leftIcon       | 左侧的图标(音频)                                             | :leftIcon="'iconFont icon-xxx'" | 左侧图标(音频/键盘)切换时的音频图标   | String |
-| leftIconChange | 左侧图标(键盘)                                               | 同上                            | 左侧图标(音频/键盘)切换时的键盘图标   | String |
-| leftIconSize   | 左侧图标的大小，两个相同                                     |                                 | 默认大小23                            | Number |
-| leftIconColor  | 左侧图标的颜色                                               | 十六进制/rgb颜色                | 默认为#000                            | String |
-| rightIconLeft  | 右侧图标的最左侧图标(图片)                                   |                                 |                                       | String |
-| rightIconRight | 右侧图标的最左侧图标(发送)                                   |                                 |                                       | String |
-| rightIconSize  | 右侧图标的大小，两个相同                                     |                                 | 默认大小20                            | Number |
-| rightIconColor | 右侧图标的颜色                                               | 十六进制/rgb颜色                |                                       | String |
-| popBg          | 聊天气泡颜色                                                 | 十六进制/rgb颜色                | 默认#6AEA9E                           | String |
-| popSize        | 聊天气泡字号                                                 |                                 | 默认15                                | Number |
-| popRightAva    | 聊天气泡右侧头像                                             | 图片链接                        |                                       | String |
-| popLeftAva     | 聊天气泡左侧头像                                             | 图片链接                        |                                       | String |
+| 参数名         | 功能                                                         | 示例                            | 说明                                                         | 类型   |
+| -------------- | ------------------------------------------------------------ | ------------------------------- | ------------------------------------------------------------ | ------ |
+| username       | header头部的联系人                                           | :username="'admin'"             |                                                              | String |
+| contentHeight  | 聊天区域高度                                                 | :contentHeight="200"            | 不建议修改，如果有header头可以修改FChat类的ToastTop，兼容性较好，而且请确认插件位于页面最低，防止出现输入法弹出高度问题 | Number |
+| contentBg      | 聊天区域的背景颜色                                           | :contentBg="'#123456'"          |                                                              | String |
+| preventId      | 控制音频长按时禁止选中的范围(防止长按选中导致失去焦点，详情见注意) | :preventId="'allContent'"       | 插件通过document.getElementById()获取                        | String |
+| leftIcon       | 左侧的图标(音频)                                             | :leftIcon="'iconFont icon-xxx'" | 左侧图标(音频/键盘)切换时的音频图标                          | String |
+| leftIconChange | 左侧图标(键盘)                                               | 同上                            | 左侧图标(音频/键盘)切换时的键盘图标                          | String |
+| leftIconSize   | 左侧图标的大小，两个相同                                     |                                 | 默认大小23                                                   | Number |
+| leftIconColor  | 左侧图标的颜色                                               | 十六进制/rgb颜色                | 默认为#000                                                   | String |
+| rightIconLeft  | 右侧图标的最左侧图标(图片)                                   |                                 |                                                              | String |
+| rightIconRight | 右侧图标的最左侧图标(发送)                                   |                                 |                                                              | String |
+| rightIconSize  | 右侧图标的大小，两个相同                                     |                                 | 默认大小20                                                   | Number |
+| rightIconColor | 右侧图标的颜色                                               | 十六进制/rgb颜色                |                                                              | String |
+| popBg          | 聊天气泡颜色                                                 | 十六进制/rgb颜色                | 默认#6AEA9E                                                  | String |
+| popSize        | 聊天气泡字号                                                 |                                 | 默认15                                                       | Number |
+| popRightAva    | 聊天气泡右侧头像                                             | 图片链接                        |                                                              | String |
+| popLeftAva     | 聊天气泡左侧头像                                             | 图片链接                        |                                                              | String |
 
 ------
 
@@ -297,6 +318,12 @@ created(){
 
 - [x] maxSize - 图片最大大小(默认为2M)
 - [x] onlyImg - 是否只允许发图片(默认为图片+视频都可以发送)
+- [x] ToastTop - 如果该插件在你的项目中并非全屏显示，则需要传入该插件距顶部所差高度，用于响应式计算，请务必将插件置于页面最底，防止出现输入法弹出后的高度计算问题
+
+```javascript
+//比如项目上有个header,高度为100，则这样做即可
+this.$FChat.setConfig('ToastTop',100);
+```
 
 ------
 
